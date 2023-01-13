@@ -18,7 +18,7 @@
 		{
 			"Name": "ArcInventoryEnhancedInput",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "PreDefault"
 		}
 	],
 	"Plugins": [
