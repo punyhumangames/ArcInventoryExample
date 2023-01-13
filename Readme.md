@@ -27,7 +27,7 @@ All of the examples in this project are open source and permissively licensed, u
 
 This dual licensing approach provides a few benefits:
 * Apache 2.0 provides protection from patent trolling, and reduces license boilerplate
-* MIT is compatible with many other open source licensing
+* MIT is compatible with many other open source licenses
 * Both licenses have various ecosystems to support them 
 
 Content provided by the Unreal Engine is licensed under their respective licenses.  
