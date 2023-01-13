@@ -32,6 +32,8 @@ This dual licensing approach provides a few benefits:
 
 Content provided by the Unreal Engine is licensed under their respective licenses.  
 
+Content in the KennyAssets folder was created by [KennyNL](https://www.kenney.nl/) and is used under the [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) license.  
+
 ## Contributing
 
 Contributions in the form of pull requests are extremely welcome!  All contributions must be provided under both of these licenses.
