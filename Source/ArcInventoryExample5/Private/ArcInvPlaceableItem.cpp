@@ -5,6 +5,8 @@
 #include "EngineMinimal.h"
 #include "ArcInventory.h"
 #include "Modular/Fragments/ArcItemFragment_StaticMesh.h"
+#include "ArcInventoryDeveloperSettings.h"
+#include "Modular/ArcItemStackModular.h"
 
 // Sets default values
 AArcInvPlaceableItem::AArcInvPlaceableItem()

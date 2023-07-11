@@ -8,6 +8,7 @@
 #include "GameFramework/InputSettings.h"
 
 #include "ArcInventory.h"
+#include "Modular/ArcInventoryComponent_Modular.h"
 #include "AbilitySystemComponent.h"
 #include "Modular/ArcInventoryModularBPFL.h"
 

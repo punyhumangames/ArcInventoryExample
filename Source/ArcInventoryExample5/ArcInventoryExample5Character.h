@@ -7,6 +7,7 @@
 #include "AbilitySystemInterface.h"
 #include "GameplayCueInterface.h"
 #include "ArcInventory.h"
+#include "Interfaces/ArcInventoryInterface.h"
 #include "ArcInventoryExample5Character.generated.h"
 
 class UInputComponent;
