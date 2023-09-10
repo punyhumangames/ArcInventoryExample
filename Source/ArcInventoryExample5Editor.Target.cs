@@ -8,7 +8,7 @@ public class ArcInventoryExample5EditorTarget : TargetRules
 	public ArcInventoryExample5EditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
-		DefaultBuildSettings = BuildSettingsVersion.V2;
+		DefaultBuildSettings = BuildSettingsVersion.V4;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
 		ExtraModuleNames.Add("ArcInventoryExample5");
 	}

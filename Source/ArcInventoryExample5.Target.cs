@@ -8,7 +8,7 @@ public class ArcInventoryExample5Target : TargetRules
 	public ArcInventoryExample5Target(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
-		DefaultBuildSettings = BuildSettingsVersion.V2;
+		DefaultBuildSettings = BuildSettingsVersion.V4;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
 		ExtraModuleNames.Add("ArcInventoryExample5");
 	}
