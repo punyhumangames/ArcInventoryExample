@@ -35,7 +35,7 @@ class AArcInventoryExample5Character : public ACharacter, public IAbilitySystemI
 		class UAbilitySystemComponent* AbilitySystemComponent;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-		class UArcInventoryComponent* InventoryComponent;
+		class UArcInventoryComponent_Modular* InventoryComponent;
 public:
 	static FName AbilitySystemComponentName;
 	static FName InventoryComponentName;
@@ -43,7 +43,7 @@ public:
 public:
 	AArcInventoryExample5Character(const FObjectInitializer& ObjectInitializer);
 	
-	virtual UArcInventoryComponent* GetInventoryComponent() const override { return InventoryComponent; }
+	virtual UArcInventoryComponent_Modular* GetInventoryComponent() const override { return InventoryComponent; }
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override { return AbilitySystemComponent; }
 
 protected:

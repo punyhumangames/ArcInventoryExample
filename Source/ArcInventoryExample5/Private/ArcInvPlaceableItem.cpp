@@ -8,6 +8,8 @@
 #include "ArcInventoryDeveloperSettings.h"
 #include "Modular/ArcItemStackModular.h"
 
+#include "Engine/StreamableManager.h"
+
 // Sets default values
 AArcInvPlaceableItem::AArcInvPlaceableItem()
 {
@@ -99,7 +101,13 @@ void AArcInvPlaceableItem::PostEditChangeProperty(FPropertyChangedEvent& Propert
 					return Fragment->FragmentTags.HasTag(FArcInvWorldItemMeshTag);
 					}))
 				{
-					EditorStaticMesh->SetStaticMesh(SMFragment->Mesh);
+					FStreamableManager Manager;
+					TSoftObjectPtr<UStaticMesh> Mesh = SMFragment->Mesh;
+					Manager.RequestAsyncLoad(SMFragment->Mesh.LoadSynchronous(), FStreamableDelegate::CreateWeakLambda(this, [this, Mesh]
+						{
+							EditorStaticMesh->SetStaticMesh(Mesh.LoadSynchronous());
+						}));
+					
 				}
 			}
 		}
