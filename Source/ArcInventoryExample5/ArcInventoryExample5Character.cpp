@@ -19,7 +19,7 @@ FName AArcInventoryExample5Character::InventoryComponentName(TEXT("InventoryComp
 // AArcInventoryExample5Character
 
 AArcInventoryExample5Character::AArcInventoryExample5Character(const FObjectInitializer& ObjectInitializer)
-	: Super(ObjectInitializer.SetDefaultSubobjectClass<UArcInventoryComponent_Modular>(InventoryComponentName))
+	: Super(ObjectInitializer)
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
@@ -42,7 +42,7 @@ AArcInventoryExample5Character::AArcInventoryExample5Character(const FObjectInit
 	Mesh1P->SetRelativeRotation(FRotator(1.9f, -19.19f, 5.2f));
 	Mesh1P->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
 
-	InventoryComponent = CreateDefaultSubobject<UArcInventoryComponent>(InventoryComponentName);
+	InventoryComponent = CreateDefaultSubobject<UArcInventoryComponent_Modular>(InventoryComponentName);
 	AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>(AbilitySystemComponentName);
 }
 
