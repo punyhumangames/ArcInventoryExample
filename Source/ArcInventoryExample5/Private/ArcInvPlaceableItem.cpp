@@ -98,7 +98,7 @@ void AArcInvPlaceableItem::PostEditChangeProperty(FPropertyChangedEvent& Propert
 			if (IsValid(EditorStaticMesh))
 			{
 				if (UArcItemFragment_StaticMesh* SMFragment = MIS->FindFirstFragment<UArcItemFragment_StaticMesh>([](UArcItemFragment_StaticMesh* Fragment) -> bool {
-					return Fragment->FragmentTags.HasTag(FArcInvWorldItemMeshTag);
+					return Fragment->HasMatchingGameplayTag(FArcInvWorldItemMeshTag);
 					}))
 				{
 					TSoftObjectPtr<UStaticMesh> Mesh = SMFragment->Mesh;
