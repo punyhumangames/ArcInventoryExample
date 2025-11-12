@@ -41,26 +41,24 @@ int32 UArcInvEnhancedInputSubsystem::GetOrAddInputAction(UAbilitySystemComponent
 		return FoundAction;
 	}
 	
-
+	UInputAction* InputAction = InBinder->InputAction;
+	int32 ActionBindingIndex = InputActionArray.Add(InputAction);
 	//Get the InputComponent for this ASC.  It was created on the first binding, but if there are many bindings we need to reuse it
 	if (ASCInputComponents.Contains(ASC))
 	{
-		UInputAction* InputAction = InBinder->InputAction;
-		int32 ActionBindingIndex = InputActionArray.Add(InputAction);
 		//The EnhancedInputComponent can be null here legitimately.  We only create these for input consuming clients
 		//However, the input index _does_ need to be synchronized.  So if we don't have an input component here, still return that ID.
 		if (UEnhancedInputComponent* InputComponent = ASCInputComponents[ASC])
-		{	
+		{
 			InputComponent->BindAction(InputAction, InBinder->StartTriggerEvent, ASC, &UAbilitySystemComponent::AbilityLocalInputPressed, ActionBindingIndex);
 
 			InputComponent->BindAction(InputAction, InBinder->EndTriggerEvent, ASC, &UAbilitySystemComponent::AbilityLocalInputReleased, ActionBindingIndex);
 			InputComponent->BindAction(InputAction, ETriggerEvent::Canceled, ASC, &UAbilitySystemComponent::AbilityLocalInputReleased, ActionBindingIndex);
 			
 		}
-		return ActionBindingIndex;
 	}
 
-	return INDEX_NONE;
+	return ActionBindingIndex;
 }
 
 void UArcInvEnhancedInputSubsystem::RemoveInputAction(UAbilitySystemComponent* ASC, UArcInvEnhancedInputBinder* InBinder)
